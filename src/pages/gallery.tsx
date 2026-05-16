@@ -1,3 +1,6 @@
+/**
+ * Enhanced
+ */
 import { useEffect, useState } from "react";
 import { Layout } from "@/components/layout/Layout";
 import { Calendar, Camera, X, ZoomIn, ChevronLeft, ChevronRight } from "lucide-react";
