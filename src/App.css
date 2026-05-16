@@ -1,0 +1,420 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Brand Colors - Earthy & Spiritual */
+    --background: 30 33% 98%;
+    --foreground: 20 14% 4%;
+    --card: 0 0% 100%;
+    --card-foreground: 20 14% 4%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 14% 4%;
+    --primary: 25 30% 25%;
+    --primary-foreground: 30 33% 98%;
+    --secondary: 30 20% 92%;
+    --secondary-foreground: 25 30% 25%;
+    --muted: 30 20% 92%;
+    --muted-foreground: 25 10% 40%;
+    --accent: 38 65% 55%;
+    --accent-foreground: 25 30% 25%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 30 33% 98%;
+    --border: 30 15% 88%;
+    --input: 30 15% 88%;
+    --ring: 38 65% 55%;
+    --radius: 0.5rem;
+    
+    /* Spiritual Gold */
+    --gold: 38 65% 55%;
+    --gold-dark: 38 65% 45%;
+    --espresso: 25 30% 25%;
+    --espresso-light: 25 20% 35%;
+    --earth: 30 20% 30%;
+    --sage: 120 15% 65%;
+  }
+
+  .dark {
+    --background: 20 14% 6%;
+    --foreground: 30 33% 98%;
+    --card: 20 14% 8%;
+    --card-foreground: 30 33% 98%;
+    --popover: 20 14% 8%;
+    --popover-foreground: 30 33% 98%;
+    --primary: 25 30% 35%;
+    --primary-foreground: 30 33% 98%;
+    --secondary: 25 20% 15%;
+    --secondary-foreground: 30 33% 98%;
+    --muted: 25 20% 15%;
+    --muted-foreground: 30 10% 60%;
+    --accent: 38 65% 55%;
+    --accent-foreground: 25 30% 25%;
+    --border: 25 20% 20%;
+    --input: 25 20% 20%;
+    --ring: 38 65% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer components {
+  /* Sacred Card Styles */
+  .card-sacred {
+    @apply bg-card rounded-xl shadow-sm border border-border/50 transition-all duration-300;
+  }
+  
+  .card-sacred:hover {
+    @apply shadow-xl border-accent/30 -translate-y-1;
+  }
+
+  /* Section Padding */
+  .section-padding {
+    @apply py-16 md:py-20 lg:py-24;
+  }
+
+  /* Heading Styles */
+  .heading-sacred {
+    @apply font-display font-semibold tracking-tight;
+  }
+
+  /* Button Variants */
+  .btn-whatsapp {
+    @apply bg-[#25D366] text-white hover:bg-[#128C7E] transition-colors;
+  }
+
+  .btn-gold {
+    @apply bg-[hsl(var(--gold))] text-espresso hover:bg-[hsl(var(--gold-dark))] transition-colors font-semibold;
+  }
+
+  /* Link Styles */
+  .link-sacred {
+    @apply relative inline-block;
+  }
+  
+  .link-sacred::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300;
+  }
+  
+  .link-sacred:hover::after {
+    @apply w-full;
+  }
+
+  /* Container Max Width */
+  .container-custom {
+    @apply container mx-auto px-4 md:px-6 lg:px-8;
+  }
+}
+
+/* Custom Animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-down {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes rotate-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes pulse-fast {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 5px rgba(212, 175, 55, 0.3));
+  }
+  50% {
+    filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.6));
+  }
+}
+
+/* Animation Utility Classes */
+.animate-fade-in {
+  animation: fade-in 0.6s ease-out forwards;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out forwards;
+}
+
+.animate-fade-in-down {
+  animation: fade-in-down 0.5s ease-out forwards;
+}
+
+.animate-slide-in-left {
+  animation: slide-in-left 0.6s ease-out forwards;
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.6s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.5s ease-out forwards;
+}
+
+.animate-rotate-slow {
+  animation: rotate-slow 20s linear infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 3s ease-in-out infinite;
+}
+
+.animate-pulse-fast {
+  animation: pulse-fast 1.5s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 2s ease-in-out infinite;
+}
+
+/* Delay Classes */
+.animation-delay-100 {
+  animation-delay: 100ms;
+}
+.animation-delay-200 {
+  animation-delay: 200ms;
+}
+.animation-delay-300 {
+  animation-delay: 300ms;
+}
+.animation-delay-400 {
+  animation-delay: 400ms;
+}
+.animation-delay-500 {
+  animation-delay: 500ms;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-secondary;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-accent/50 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-accent;
+}
+
+/* Selection Color */
+::selection {
+  @apply bg-accent/30 text-espresso;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus Styles */
+*:focus-visible {
+  @apply outline-none ring-2 ring-accent ring-offset-2 ring-offset-background;
+}
+
+/* Loading Skeleton */
+.skeleton {
+  @apply animate-pulse bg-muted rounded;
+}
+
+/* Gradient Text */
+.gradient-text {
+  background: linear-gradient(135deg, hsl(var(--accent)) 0%, hsl(var(--gold)) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* Glass Effect */
+.glass {
+  @apply bg-white/10 backdrop-blur-md border border-white/20;
+}
+
+/* Hover Scale */
+.hover-scale {
+  @apply transition-transform duration-300 hover:scale-105;
+}
+
+/* Sacred Border */
+.border-sacred {
+  @apply border-2 border-accent/20 rounded-lg;
+}
+
+/* Remove default Vite styles */
+#root {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+.logo {
+  height: auto;
+  padding: 0;
+  will-change: auto;
+}
+
+.logo:hover {
+  filter: none;
+}
+
+/* Responsive Typography */
+@media (max-width: 640px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 1025px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .no-print {
+    display: none;
+  }
+  
+  body {
+    background: white;
+    color: black;
+  }
+}
