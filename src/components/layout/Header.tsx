@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ShoppingBag, Calendar, Image, BookOpen, Users, Sparkles } from "lucide-react";
+import { Menu, X, Calendar, Image, BookOpen, Users, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import logo from "@/assets/logo.png";
@@ -10,7 +10,6 @@ const navigation = [
   { name: "Home", href: "/", icon: Sparkles },
   { name: "About", href: "/about", icon: Users },
   { name: "Services", href: "/services", icon: BookOpen },
-  { name: "Shop", href: "/shop", icon: ShoppingBag },
   { name: "Blog", href: "/blog", icon: BookOpen },
   { name: "Events", href: "/events", icon: Calendar },
   { name: "Gallery", href: "/gallery", icon: Image },

@@ -9,7 +9,6 @@ import { ScrollToTop } from "@/components/ScrollToTop";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Services from "./pages/Services";
-import Shop from "./pages/Shop";
 import Blog from "./pages/Blog";
 import Events from "./pages/Events";
 import Gallery from "./pages/Gallery";
@@ -49,7 +48,6 @@ function AppInner() {
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
-          <Route path="/shop" element={<Shop />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:id" element={<Blog />} />
           <Route path="/events" element={<Events />} />
